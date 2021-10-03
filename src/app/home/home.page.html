@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      World Map
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="map"
+     leaflet
+     leafletDraw
+     [leafletOptions]="options"
+     [leafletDrawOptions]="drawOptions"
+     [leafletLayersControl]="layersControl"
+     (leafletDrawCreated)="onDrawCreated($event)"
+     (leafletMapReady)="onMapReady($event)">
+     <div [leafletLayer]="drawItems"></div>
+</div>
+</ion-content>
